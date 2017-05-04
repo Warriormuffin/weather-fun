@@ -1,6 +1,5 @@
 function WeatherService(){
 
-function WeatherService() {
 
   // Create the promise chain here
 
@@ -13,6 +12,7 @@ function WeatherService() {
 
       $.get(url).then(
         function(data) {
+          console.log(data)
           resolve(data);
         },
         function(error) {
@@ -22,9 +22,11 @@ function WeatherService() {
     });
 	}
 
+
+
 	this.getWeather = function getWeather(cityData) {
 
-    var zip = cityData['postal code'];
+    var zip = cityData['post code'];
 		var urlBase = 'http://api.openweathermap.org/data/2.5/';
 		var appId = 'bd82255fd0a21fa1238699b9eda2ee35';
 		var url = urlBase + 'weather?appid=' + appId + '&units=imperial&zip=' + zip;
@@ -33,6 +35,7 @@ function WeatherService() {
 
       $.get(url).then(
         function(data) {
+          console.log(data)
           resolve(data);
         },
         function(error) {
@@ -42,10 +45,3 @@ function WeatherService() {
     });
 	}
 };
-
-  this.getCity()
-  this.getWeather()
-
-
-
-}

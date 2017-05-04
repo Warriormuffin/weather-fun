@@ -1,15 +1,40 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Javascript Promises</title>
+  <meta charset="utf-8">
+  <title>Javascript Promises</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
 
 <body>
+  <div class="container">
+
+    <form class="form-inline" onsubmit="app.controllers.weatherCtrl.getZip(event)">
+      <input class="form-control" type="text" placeholder="Zip Code" id="zipcode" name="zip">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cards">
+          <div id="city">
+          </div>
+          <div id="weather">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div id="map"></div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="weather-controller.js"></script>
   <script src="weather-service.js"></script>
-	<script src="app.js"></script>
+  <script src="weather-controller.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfWwvwtawdcdOKBAwsaf1oyO_Fk_TWXqU&callback=initMap" async defer></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
